@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { Row, Col } from 'antd';
+import Intro from './Components/Intro';
+import ContentArea from './Components/ContentArea';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App' style={{ background: '#f3f5f8', height: '100vh' }}>
+      <Row>
+        <Col xs={24} className='ant-p-3'>
+          <Intro />
+        </Col>
+        <Col xs={24} style={{ padding: '1rem' }}>
+          <ContentArea />
+        </Col>
+      </Row>
     </div>
   );
 }
