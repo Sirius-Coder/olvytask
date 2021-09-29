@@ -62,21 +62,28 @@ function ContentArea() {
         case 'equals':
           setHighlightedRows(
             dataCopy
-              .filter((user) => user.name.toLowerCase() === values.value)
+              .filter(
+                (user) => user.name.toLowerCase() === values.value.toLowerCase()
+              )
               .map((user) => user.id)
           );
           break;
         case 'include':
           setHighlightedRows(
             dataCopy
-              .filter((user) => user.name.toLowerCase().includes(values.value))
+              .filter((user) =>
+                user.name.toLowerCase().includes(values.value.toLowerCase())
+              )
               .map((user) => user.id)
           );
           break;
         case 'notinclude':
           setHighlightedRows(
             dataCopy
-              .filter((user) => !user.name.toLowerCase().includes(values.value))
+              .filter(
+                (user) =>
+                  !user.name.toLowerCase().includes(values.value.toLowerCase())
+              )
               .map((user) => user.id)
           );
           break;
@@ -88,7 +95,10 @@ function ContentArea() {
         case 'equals':
           setHighlightedRows(
             dataCopy
-              .filter((user) => user.username.toLowerCase() === values.value)
+              .filter(
+                (user) =>
+                  user.username.toLowerCase() === values.value.toLowerCase()
+              )
               .map((user) => user.id)
           );
           break;
@@ -99,7 +109,7 @@ function ContentArea() {
                 user.username
                   .substr(0, values.value.length)
                   .toLowerCase()
-                  .includes(values.value)
+                  .includes(values.value.toLowerCase())
               )
               .map((user) => user.id)
           );
@@ -111,7 +121,7 @@ function ContentArea() {
                 user.username
                   .substr(-values.value.length)
                   .toLowerCase()
-                  .includes(values.value)
+                  .includes(values.value.toLowerCase())
               )
               .map((user) => user.id)
           );
